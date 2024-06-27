@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "rubysteelmod",
+	"version": "${version}",
+	"name": "Ruby Steel Mod",
+	"description": "just a simple mod that adds steel and rubys thank you Kaupenjoe for the grate tutorial   ",
+	"authors": [
+		"robbie! :-| "
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/rubysteelmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.robbie.rubysteelmod.RubySteelMod"
+		],
+		"client": [
+			"net.robbie.rubysteelmod.RubySteelModClient"
+		],
+		"fabric-datagen": [
+			"net.robbie.rubysteelmod.RubySteelModDataGenerator"
+		]
+	},
+	"mixins": [
+		"rubysteelmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
