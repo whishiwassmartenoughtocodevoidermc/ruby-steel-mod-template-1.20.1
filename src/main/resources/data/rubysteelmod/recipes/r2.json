@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "rubysteelmod:ruby_dust"
+    },
+     {
+      "item": "rubysteelmod:steel"
+    }
+  ],
+  "result": {
+    "item": "rubysteelmod:redsteel",
+    "count": 1
+  }
+}

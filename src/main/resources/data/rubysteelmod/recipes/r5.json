@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "ingredient": {
+    "item": "rubysteelmod:raw_ruby"
+  },
+  "result": "rubysteelmod:ruby",
+  "experience": 2.27,
+  "cookingtime": 200
+}
