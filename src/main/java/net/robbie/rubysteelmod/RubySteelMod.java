@@ -2,6 +2,7 @@ package net.robbie.rubysteelmod;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.robbie.rubysteelmod.item.moditem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -11,8 +12,6 @@ public class RubySteelMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
-
-		LOGGER.info("Hello Fabric world!");
+		moditem.registermoditem();
 	}
 }
