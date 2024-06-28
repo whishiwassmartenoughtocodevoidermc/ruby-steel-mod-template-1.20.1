@@ -18,6 +18,7 @@ public class moditem {
     public static final Item TUNGSTEN = registeritem("tungsten",new Item(new FabricItemSettings()));
     public static final Item STEEL = registeritem("steel",new Item(new FabricItemSettings()));
     public static final Item RAW_TUNGSTEN = registeritem("raw_tungsten",new Item(new FabricItemSettings()));
+    public static final Item RUBY_DUST = registeritem("ruby_dust",new Item(new FabricItemSettings()));
 
     private static void addItemstoingrediantstab(FabricItemGroupEntries entries) {
         entries.add(RUBY);
@@ -26,6 +27,7 @@ public class moditem {
         entries.add(REDSTEEL);
         entries.add(RAW_RUBY);
         entries.add(RAW_TUNGSTEN);
+        entries.add(RUBY_DUST);
 
     }
 

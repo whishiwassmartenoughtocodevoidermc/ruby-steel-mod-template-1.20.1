@@ -1,10 +1,11 @@
 {
   "item.rubysteelmod.ruby": "Ruby",
   "item.rubysteelmod.raw_ruby": "Raw Ruby",
-  "item.rubysteelmod.tungsten": "Tungsten",
+  "item.rubysteelmod.tungsten": "Tungsten Ingot",
   "item.rubysteelmod.raw_tungsten": "Raw Tungsten",
-  "item.rubysteelmod.steel": "Steel",
-  "item.rubysteelmod.redsteel": "Red Steel"
+  "item.rubysteelmod.steel": "Steel Ingot",
+  "item.rubysteelmod.redsteel": "Red Steel Ingot",
+  "item.rubysteelmod.ruby_dust": "Ruby Dust"
 
 
 
