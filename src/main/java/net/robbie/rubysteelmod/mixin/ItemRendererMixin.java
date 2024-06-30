@@ -20,6 +20,9 @@ public abstract class ItemRendererMixin {
         if (stack.isOf(moditem.RUBY_SWORD) && renderMode != ModelTransformationMode.GUI) {
             return ((ItemRendererAccessor) this).mccourse$getModels().getModelManager().getModel(new ModelIdentifier(RubySteelMod.MOD_ID, "ruby_sword_3d", "inventory"));
         }
+        if (stack.isOf(moditem.RUBY_AXE) && renderMode != ModelTransformationMode.GUI) {
+            return ((ItemRendererAccessor) this).mccourse$getModels().getModelManager().getModel(new ModelIdentifier(RubySteelMod.MOD_ID, "ruby_axe_3d", "inventory"));
+        }
         return value;
     }
 }

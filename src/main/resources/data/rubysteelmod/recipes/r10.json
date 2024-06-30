@@ -7,18 +7,15 @@
     },
     "X": {
       "item": "rubysteelmod:ruby"
-    },
-    "-": {
-      "item": "minecraft:netherite_ingot"
     }
   },
   "pattern": [
-    "  X",
-    "-X ",
-    "#- "
+    "XX",
+    "X#",
+    " #"
   ],
   "result": {
-    "item": "rubysteelmod:ruby_sword"
+    "item": "rubysteelmod:ruby_axe"
   },
   "show_notification": true
 }

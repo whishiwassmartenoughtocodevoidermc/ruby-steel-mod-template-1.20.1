@@ -6,7 +6,7 @@ import net.minecraft.recipe.Ingredient;
 import java.util.function.Supplier;
 
 public enum modtoolmaterial implements ToolMaterial {
-    RUBY(2,3503,3.1f,5.0f,  20.5f, ()-> Ingredient.ofItems(moditem.RUBY));
+    RUBY(7,3503,22.5f,5.0f,  20.5f, ()-> Ingredient.ofItems(moditem.RUBY));
 
     private final int mineinglevel;
     private final int itemDurability;

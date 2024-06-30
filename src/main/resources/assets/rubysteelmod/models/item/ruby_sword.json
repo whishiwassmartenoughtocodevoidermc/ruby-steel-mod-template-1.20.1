@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "rubysteelmod:SwordItem/ruby_sword"
+    "layer0": "rubysteelmod:item/ruby_sword"
   }
 }
