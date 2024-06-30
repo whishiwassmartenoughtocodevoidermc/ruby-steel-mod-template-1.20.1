@@ -13,12 +13,12 @@
     }
   },
   "pattern": [
-    "  x",
-    "-x ",
+    "  X",
+    "-X ",
     "#- "
   ],
   "result": {
-    "item": "minecraft:ruby_sword"
+    "item": "rubysteelmod:ruby_sword"
   },
   "show_notification": true
 }
