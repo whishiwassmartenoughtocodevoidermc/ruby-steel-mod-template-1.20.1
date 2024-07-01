@@ -20,6 +20,11 @@ public class moditem {
     public static final Item RUBY_SWORD = registeritem("ruby_sword",new SwordItem(modtoolmaterial.RUBY,4,-2.4f,new FabricItemSettings().fireproof()));
     public static final Item RUBY_PICKAXE = registeritem("ruby_pickaxe",new PickaxeItem((modtoolmaterial.RUBY),1,0.6f,new FabricItemSettings().fireproof()));
     public static final Item RUBY_AXE = registeritem("ruby_axe", new AxeItem((modtoolmaterial.RUBY), 6, -3.0f, new FabricItemSettings().fireproof()));
+    public static final Item RUBY_HELMET = registeritem("ruby_helmet", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
+    public static final Item RUBY_CHESTPLATE = registeritem("ruby_chestplate", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
+    public static final Item RUBY_LEGGINGS = registeritem("ruby_leggings", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
+    public static final Item RUBY_BOOTS = registeritem("ruby_boots", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
+
 
 
 
@@ -39,6 +44,10 @@ public class moditem {
     private static void addItemstoweponstab(FabricItemGroupEntries entries) {
      entries.add(RUBY_SWORD);
      entries.add(RUBY_AXE);
+     entries.add(moditem.RUBY_HELMET);
+     entries.add(moditem.RUBY_CHESTPLATE);
+     entries.add(moditem.RUBY_LEGGINGS);
+     entries.add(moditem.RUBY_BOOTS);
     }
 
     private static void addItemstotoolstab(FabricItemGroupEntries entries) {

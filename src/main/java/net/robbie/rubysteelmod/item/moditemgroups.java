@@ -17,9 +17,10 @@ public class moditemgroups {
                     .icon(() -> new ItemStack(moditem.RUBY)).entries((displayContext, entries) -> {
                         entries.add(moditem.RUBY);
                         entries.add(moditem.RAW_RUBY);
-
-
-
+                        entries.add(moditem.RUBY_HELMET);
+                        entries.add(moditem.RUBY_CHESTPLATE);
+                        entries.add(moditem.RUBY_LEGGINGS);
+                        entries.add(moditem.RUBY_BOOTS);
                         entries.add(modblock.RUBY_BLOCK);
                         entries.add(modblock.RAW_RUBY_BLOCK);
 
