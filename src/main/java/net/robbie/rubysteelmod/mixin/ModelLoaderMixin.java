@@ -25,5 +25,6 @@ public abstract class ModelLoaderMixin {
     public void addRubyItems(BlockColors blockColors, Profiler profiler, Map<Identifier, JsonUnbakedModel> jsonUnbakedModels, Map<Identifier, List<ModelLoader.SourceTrackedData>> blockStates, CallbackInfo ci) {
         this.addModel(new ModelIdentifier(RubySteelMod.MOD_ID, "ruby_sword_3d", "inventory"));
         this.addModel(new ModelIdentifier(RubySteelMod.MOD_ID, "ruby_axe_3d", "inventory"));
+        this.addModel(new ModelIdentifier(RubySteelMod.MOD_ID, "redsteel_katana_3d", "inventory"));
     }
 }

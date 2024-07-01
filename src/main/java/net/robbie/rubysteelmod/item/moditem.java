@@ -24,6 +24,7 @@ public class moditem {
     public static final Item RUBY_CHESTPLATE = registeritem("ruby_chestplate", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
     public static final Item RUBY_LEGGINGS = registeritem("ruby_leggings", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
     public static final Item RUBY_BOOTS = registeritem("ruby_boots", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
+    public static final Item REDSTEEL_KATANA = registeritem("redsteel_katana",new SwordItem(modtoolmaterial.REDSTEEL,8,-1.2f,new FabricItemSettings().fireproof()));
 
 
 
@@ -48,6 +49,7 @@ public class moditem {
      entries.add(moditem.RUBY_CHESTPLATE);
      entries.add(moditem.RUBY_LEGGINGS);
      entries.add(moditem.RUBY_BOOTS);
+     entries.add(REDSTEEL_KATANA);
     }
 
     private static void addItemstotoolstab(FabricItemGroupEntries entries) {

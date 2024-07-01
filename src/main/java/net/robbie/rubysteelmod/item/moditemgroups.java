@@ -23,6 +23,8 @@ public class moditemgroups {
                         entries.add(moditem.RUBY_BOOTS);
                         entries.add(modblock.RUBY_BLOCK);
                         entries.add(modblock.RAW_RUBY_BLOCK);
+                        entries.add(moditem.REDSTEEL_KATANA);
+
 
 
                     }).build());
