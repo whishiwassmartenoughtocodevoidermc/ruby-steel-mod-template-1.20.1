@@ -1,6 +1,3 @@
 {
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "rubysteelmod:item/raw_ruby_block"
-  }
+  "parent": "rubysteelmod:block/raw_ruby_block"
 }

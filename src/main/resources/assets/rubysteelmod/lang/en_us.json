@@ -9,8 +9,9 @@
   "item.rubysteelmod.ruby_sword": "Ruby Sword",
   "item.rubysteelmod.ruby_pickaxe": "Ruby Pickaxe",
   "item.rubysteelmod.ruby_axe": "Ruby Axe",
-  "item.rubysteelmod.raw_ruby_block": "Raw Ruby Block"
-
+  "block.rubysteelmod.raw_ruby_block": "Raw Ruby Block",
+  "block.rubysteelmod.ruby_block": "Ruby Block",
+  "itemgroup.ruby": "Ruby Mod Items"
 
 
 }

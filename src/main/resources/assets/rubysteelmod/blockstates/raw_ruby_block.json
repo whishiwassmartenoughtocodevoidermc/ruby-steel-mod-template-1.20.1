@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "rubysteelmod:block/raw_ruby_block"
+    }
+  }
+}
