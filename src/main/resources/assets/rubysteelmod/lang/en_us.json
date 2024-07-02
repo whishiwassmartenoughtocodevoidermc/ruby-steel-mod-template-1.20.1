@@ -9,13 +9,14 @@
   "item.rubysteelmod.ruby_sword": "Ruby Sword",
   "item.rubysteelmod.ruby_pickaxe": "Ruby Pickaxe",
   "item.rubysteelmod.ruby_axe": "Ruby Axe",
-  "block.rubysteelmod.raw_ruby_block": "Ruby ore",
+  "block.rubysteelmod.ruby_ore": "Ruby Ore",
   "block.rubysteelmod.ruby_block": "Ruby Block",
   "item.rubysteelmod.ruby_helmet": "Ruby Helmet",
   "item.rubysteelmod.ruby_chestplate": "Ruby Chestplate",
   "item.rubysteelmod.ruby_leggings": "Ruby Leggings",
   "item.rubysteelmod.ruby_boots": "Ruby Boots",
   "item.rubysteelmod.redsteel_katana": "Redsteel Katana",
+   "block.rubysteelmod.deepslate_ruby_ore": "Deepslate Ruby Ore",
   "itemgroup.ruby": "Ruby Mod Items"
 
 

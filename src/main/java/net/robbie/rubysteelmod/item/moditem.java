@@ -8,6 +8,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.robbie.rubysteelmod.RubySteelMod;
+import net.robbie.rubysteelmod.item.custom.modarmoritem;
 
 public class moditem {
     public static final Item REDSTEEL = registeritem("redsteel",new Item(new FabricItemSettings()));
@@ -20,7 +21,7 @@ public class moditem {
     public static final Item RUBY_SWORD = registeritem("ruby_sword",new SwordItem(modtoolmaterial.RUBY,4,-2.4f,new FabricItemSettings().fireproof()));
     public static final Item RUBY_PICKAXE = registeritem("ruby_pickaxe",new PickaxeItem((modtoolmaterial.RUBY),1,0.6f,new FabricItemSettings().fireproof()));
     public static final Item RUBY_AXE = registeritem("ruby_axe", new AxeItem((modtoolmaterial.RUBY), 6, -3.0f, new FabricItemSettings().fireproof()));
-    public static final Item RUBY_HELMET = registeritem("ruby_helmet", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
+    public static final Item RUBY_HELMET = registeritem("ruby_helmet", new modarmoritem(modarmormaterial.RUBY, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
     public static final Item RUBY_CHESTPLATE = registeritem("ruby_chestplate", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
     public static final Item RUBY_LEGGINGS = registeritem("ruby_leggings", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
     public static final Item RUBY_BOOTS = registeritem("ruby_boots", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
