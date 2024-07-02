@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "rubysteelmod:raw_ruby_block",
+    "rubysteelmod:ruby_ore",
     "rubysteelmod:ruby_block"
   ]
 }

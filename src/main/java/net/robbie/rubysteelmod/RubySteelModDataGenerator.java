@@ -20,6 +20,9 @@ public class RubySteelModDataGenerator implements DataGeneratorEntrypoint {
 
 
 
+
+
+
 	}
 	@Override
 	public void buildRegistry(RegistryBuilder registryBuilder) {
