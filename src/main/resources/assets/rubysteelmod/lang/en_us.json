@@ -16,7 +16,9 @@
   "item.rubysteelmod.ruby_leggings": "Ruby Leggings",
   "item.rubysteelmod.ruby_boots": "Ruby Boots",
   "item.rubysteelmod.redsteel_katana": "Redsteel Katana",
-   "block.rubysteelmod.deepslate_ruby_ore": "Deepslate Ruby Ore",
+  "block.rubysteelmod.deepslate_ruby_ore": "Deepslate Ruby Ore",
+  "block.rubysteelmod.tungsten_ore": "Tungsten Ore",
+  "block.rubysteelmod.deepslate_tungsten_ore": "Deepslate Tungsten Ore",
   "itemgroup.ruby": "Ruby Mod Items"
 
 

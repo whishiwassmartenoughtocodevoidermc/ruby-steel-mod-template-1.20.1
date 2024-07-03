@@ -7,7 +7,7 @@ import java.util.function.Supplier;
 
 public enum modtoolmaterial implements ToolMaterial {
     RUBY(7,3503,22.5f,5.0f,  20.5f, ()-> Ingredient.ofItems(moditem.RUBY)),
-    REDSTEEL(16,6506,45.0f,12.0f,  40.5f, ()-> Ingredient.ofItems(moditem.REDSTEEL));
+    REDSTEEL(16,6506,3005.5f,12.0f,  40.5f, ()-> Ingredient.ofItems(moditem.REDSTEEL));
 
     private final int mineinglevel;
     private final int itemDurability;

@@ -1,6 +1,5 @@
 package net.robbie.rubysteelmod.world;
 
-import net.robbie.rubysteelmod.RubySteelMod;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
@@ -11,12 +10,15 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.PlacedFeature;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.PlacementModifier;
+import net.robbie.rubysteelmod.RubySteelMod;
+import net.robbie.rubysteelmod.world.ModConfiguredFeatures;
+import net.robbie.rubysteelmod.world.ModOrePlacement;
 
 import java.util.List;
 
 public class ModPlacedFeatures {
     public static final RegistryKey<PlacedFeature> RUBY_ORE_PLACED_KEY = registerKey("ruby_ore_placed");
-
+    public static final RegistryKey<PlacedFeature> TUNGSTEN_ORE_PLACED_KEY = registerKey("tungsten_ore_placed"); // New ore
 
     public static void boostrap(Registerable<PlacedFeature> context) {
         var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
@@ -25,6 +27,10 @@ public class ModPlacedFeatures {
                 ModOrePlacement.modifiersWithCount(12, // Veins per Chunk
                         HeightRangePlacementModifier.uniform(YOffset.fixed(-80), YOffset.fixed(80))));
 
+        // Register the new ore
+        register(context, TUNGSTEN_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.TUNGSTEN_ORE_KEY),
+                ModOrePlacement.modifiersWithCount(10, // Veins per Chunk
+                        HeightRangePlacementModifier.uniform(YOffset.fixed(-60), YOffset.fixed(60))));
     }
 
     public static RegistryKey<PlacedFeature> registerKey(String name) {

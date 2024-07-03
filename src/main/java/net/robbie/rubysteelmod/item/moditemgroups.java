@@ -25,6 +25,8 @@ public class moditemgroups {
                         entries.add(modblock.RUBY_ORE);
                         entries.add(moditem.REDSTEEL_KATANA);
                         entries.add(modblock.DEEPSLATE_RUBY_ORE);
+                        entries.add(modblock.TUNGSTEN_ORE);
+                        entries.add(modblock.DEEPSLATE_TUNGSTEN_ORE);
 
 
 

@@ -20,8 +20,7 @@ import java.util.List;
 
 public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> RUBY_ORE_KEY = registerKey("ruby_ore");
-
-
+    public static final RegistryKey<ConfiguredFeature<?, ?>> TUNGSTEN_ORE_KEY = registerKey("tungsten_ore"); // New ore
 
     public static void boostrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplacables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -31,11 +30,13 @@ public class ModConfiguredFeatures {
                 List.of(OreFeatureConfig.createTarget(stoneReplacables, modblock.RUBY_ORE.getDefaultState()),
                         OreFeatureConfig.createTarget(deepslateReplacables, modblock.DEEPSLATE_RUBY_ORE.getDefaultState()));
 
-
+        // New ore
+        List<OreFeatureConfig.Target> overworldTungstenOres =
+                List.of(OreFeatureConfig.createTarget(stoneReplacables, modblock.TUNGSTEN_ORE.getDefaultState()),
+                        OreFeatureConfig.createTarget(deepslateReplacables, modblock.DEEPSLATE_TUNGSTEN_ORE.getDefaultState()));
 
         register(context, RUBY_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldRubyOres, 12));
-
-
+        register(context, TUNGSTEN_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldTungstenOres, 27)); // New ore
     }
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {

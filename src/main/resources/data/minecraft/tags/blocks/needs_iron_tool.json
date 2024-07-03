@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    
+    "rubysteelmod:tungsten_ore",
+    "rubysteelmod:deepslate_tungsten_ore"
   ]
 }
