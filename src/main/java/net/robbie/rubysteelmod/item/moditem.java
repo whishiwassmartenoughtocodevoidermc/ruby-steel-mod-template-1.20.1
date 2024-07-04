@@ -9,6 +9,8 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import net.robbie.rubysteelmod.RubySteelMod;
 import net.robbie.rubysteelmod.item.custom.modarmoritem;
+import net.minecraft.entity.LivingEntity;
+
 
 public class moditem {
     public static final Item REDSTEEL = registeritem("redsteel",new Item(new FabricItemSettings()));
@@ -18,18 +20,14 @@ public class moditem {
     public static final Item STEEL = registeritem("steel",new Item(new FabricItemSettings()));
     public static final Item RAW_TUNGSTEN = registeritem("raw_tungsten",new Item(new FabricItemSettings()));
     public static final Item RUBY_DUST = registeritem("ruby_dust",new Item(new FabricItemSettings()));
-    public static final Item RUBY_SWORD = registeritem("ruby_sword",new SwordItem(modtoolmaterial.RUBY,4,-2.4f,new FabricItemSettings().fireproof()));
-    public static final Item RUBY_PICKAXE = registeritem("ruby_pickaxe",new PickaxeItem((modtoolmaterial.RUBY),1,0.6f,new FabricItemSettings().fireproof()));
-    public static final Item RUBY_AXE = registeritem("ruby_axe", new AxeItem((modtoolmaterial.RUBY), 6, -3.0f, new FabricItemSettings().fireproof()));
+    public static final Item RUBY_SWORD = registeritem("ruby_sword",new FlamingSwordItem(modtoolmaterial.RUBY,4,-2.4f,new FabricItemSettings().fireproof()));
+    public static final Item RUBY_PICKAXE = registeritem("ruby_pickaxe",new FlamingPickaxeItem((modtoolmaterial.RUBY),1,0.6f,new FabricItemSettings().fireproof()));
+    public static final Item RUBY_AXE = registeritem("ruby_axe", new FlamingAxeItem((modtoolmaterial.RUBY), 6, -3.0f, new FabricItemSettings().fireproof()));
     public static final Item RUBY_HELMET = registeritem("ruby_helmet", new modarmoritem(modarmormaterial.RUBY, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
     public static final Item RUBY_CHESTPLATE = registeritem("ruby_chestplate", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
     public static final Item RUBY_LEGGINGS = registeritem("ruby_leggings", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
     public static final Item RUBY_BOOTS = registeritem("ruby_boots", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
-    public static final Item REDSTEEL_KATANA = registeritem("redsteel_katana",new SwordItem(modtoolmaterial.REDSTEEL,8,-1.2f,new FabricItemSettings().fireproof()));
-
-
-
-
+    public static final Item REDSTEEL_KATANA = registeritem("redsteel_katana",new FlamingSwordItem(modtoolmaterial.REDSTEEL,8,-1.2f,new FabricItemSettings().fireproof()));
 
 
     private static void addItemstoingrediantstab(FabricItemGroupEntries entries) {
@@ -40,7 +38,6 @@ public class moditem {
         entries.add(RAW_RUBY);
         entries.add(RAW_TUNGSTEN);
         entries.add(RUBY_DUST);
-
     }
 
     private static void addItemstoweponstab(FabricItemGroupEntries entries) {
@@ -69,5 +66,40 @@ public class moditem {
     }
 }
 
+class FlamingSwordItem extends SwordItem {
+    public FlamingSwordItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
+        super(material, attackDamage, attackSpeed, settings);
+    }
+
+    @Override
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        target.setOnFireFor(1200); // Sets the target on fire for 1200 ticks (60 seconds)
+        return super.postHit(stack, target, attacker);
+    }
+}
+
+class FlamingPickaxeItem extends PickaxeItem {
+    public FlamingPickaxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
+        super(material, attackDamage, attackSpeed, settings);
+    }
+
+    @Override
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        target.setOnFireFor(1200); // Sets the target on fire for 1200 ticks (60 seconds)
+        return super.postHit(stack, target, attacker);
+    }
+}
+
+class FlamingAxeItem extends AxeItem {
+    public FlamingAxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
+        super(material, attackDamage, attackSpeed, settings);
+    }
 
 
+
+    @Override
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        target.setOnFireFor(1200); // Sets the target on fire for 1200 ticks (60 seconds)
+        return super.postHit(stack, target, attacker);
+    }
+}
