@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -16,6 +17,7 @@ import net.minecraft.world.World;
 import net.robbie.rubysteelmod.RubySteelMod;
 import net.robbie.rubysteelmod.item.custom.modarmoritem;
 import net.minecraft.entity.LivingEntity;
+import  net.minecraft.entity.projectile.PersistentProjectileEntity;
 
 import java.util.function.Predicate;
 
@@ -36,7 +38,7 @@ public class moditem {
     public static final Item RUBY_LEGGINGS = registeritem("ruby_leggings", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
     public static final Item RUBY_BOOTS = registeritem("ruby_boots", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
     public static final Item REDSTEEL_KATANA = registeritem("redsteel_katana",new FlamingSwordItem(modtoolmaterial.REDSTEEL,8,-1.2f,new FabricItemSettings().fireproof()));
-    public static final Item RUBY_ARROW = registeritem("ruby_arrow",new ArrowItem(new FabricItemSettings().fireproof()));
+    public static final Item RUBY_ARROW = registeritem("ruby_arrow", new RubyArrowItem(new FabricItemSettings().fireproof()));
 
     private static void addItemstoingrediantstab(FabricItemGroupEntries entries) {
         entries.add(RUBY);
@@ -56,6 +58,8 @@ public class moditem {
      entries.add(moditem.RUBY_LEGGINGS);
      entries.add(moditem.RUBY_BOOTS);
      entries.add(REDSTEEL_KATANA);
+     entries.add(RUBY_ARROW);
+     entries.add(RUBY_BOW);
     }
 
     private static void addItemstotoolstab(FabricItemGroupEntries entries) {
@@ -103,57 +107,46 @@ public class moditem {
         }
     }
 
-public static class RubyBowItem extends BowItem {
-    public RubyBowItem(Settings settings) {
-        super(settings);
-    }
+    public static class RubyBowItem extends BowItem {
+        public RubyBowItem(Settings settings) {
+            super(settings);
+        }
 
-    @Override
-    public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        if (user instanceof PlayerEntity) {
-            PlayerEntity playerEntity = (PlayerEntity)user;
-            ItemStack itemStack = getRubyArrow(playerEntity);
+        @Override
+        public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
+            if (user instanceof PlayerEntity) {
+                PlayerEntity playerEntity = (PlayerEntity)user;
+                ItemStack itemStack = getRubyArrow(playerEntity);
 
-            if (itemStack.isEmpty()) {
-                return;
+                if (itemStack.isEmpty()) {
+                    return;
+                }
+
+                // Your existing code...
             }
+        }
 
-            // Your existing code...
+        private ItemStack getRubyArrow(PlayerEntity playerEntity) {
+            Predicate<ItemStack> predicate = (itemStack) -> itemStack.getItem() == RUBY_ARROW;
+            ItemStack arrowStack = BowItem.getHeldProjectile(playerEntity, predicate);
+            if (arrowStack.isEmpty()) {
+                predicate = (itemStack) -> itemStack.getItem() instanceof ArrowItem;
+                arrowStack = BowItem.getHeldProjectile(playerEntity, predicate);
+            }
+            return arrowStack;
         }
     }
 
-    private ItemStack getRubyArrow(PlayerEntity playerEntity) {
-        Predicate<ItemStack> predicate = (itemStack) -> itemStack.getItem() == RUBY_ARROW;
-        ItemStack itemStack = BowItem.getHeldProjectile(playerEntity, predicate);
-        if (itemStack.isEmpty()) {
-            predicate = (itemStack) -> itemStack.getItem() instanceof ArrowItem;
-            itemStack = BowItem.getHeldProjectile(playerEntity, predicate);
+    public static class RubyArrowItem extends ArrowItem {
+        public RubyArrowItem(Settings settings) {
+            super(settings);
         }
-        return itemStack;
-    }
-}
 
-public static class RubyArrowEntity extends PersistentProjectileEntity {
-    public RubyArrowEntity(EntityType<? extends RubyArrowEntity> entityType, World world) {
-        super(entityType, world);
-    }
-
-    @Override
-    protected void onEntityHit(EntityHitResult entityHitResult) {
-        super.onEntityHit(entityHitResult);
-
-        // Sets the entity on fire for 5 seconds (100 ticks)
-        Entity entity = entityHitResult.getEntity();
-        if (entity instanceof LivingEntity) {
-            entity.setOnFireFor(100);
+        @Override
+        public PersistentProjectileEntity createArrow(World world, ItemStack stack, LivingEntity shooter) {
+            ArrowEntity arrowEntity = new ArrowEntity(world, shooter);
+            arrowEntity.setOnFireFor(1200);  // Sets the arrow on fire for 5 seconds (100 ticks)
+            return arrowEntity;
         }
     }
-
-    @Override
-    protected ItemStack asItemStack() {
-        return new ItemStack(RUBY_ARROW);
-    }
 }
-
-}
-

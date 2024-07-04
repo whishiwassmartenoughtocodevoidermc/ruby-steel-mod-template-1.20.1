@@ -27,6 +27,10 @@ public class moditemgroups {
                         entries.add(modblock.DEEPSLATE_RUBY_ORE);
                         entries.add(modblock.TUNGSTEN_ORE);
                         entries.add(modblock.DEEPSLATE_TUNGSTEN_ORE);
+                        entries.add(moditem.RUBY_ARROW);
+                        entries.add(moditem.RUBY_BOW);
+
+
 
 
 

@@ -26,6 +26,13 @@ public abstract class ItemRendererMixin {
         if (stack.isOf(moditem.REDSTEEL_KATANA) && renderMode != ModelTransformationMode.GUI) {
             return ((ItemRendererAccessor) this).mccourse$getModels().getModelManager().getModel(new ModelIdentifier(RubySteelMod.MOD_ID, "redsteel_katana_3d", "inventory"));
         }
+        // Add your ruby_arrow and ruby_bow here
+        if (stack.isOf(moditem.RUBY_ARROW) && renderMode != ModelTransformationMode.GUI) {
+            return ((ItemRendererAccessor) this).mccourse$getModels().getModelManager().getModel(new ModelIdentifier(RubySteelMod.MOD_ID, "ruby_arrow_3d", "inventory"));
+        }
+        if (stack.isOf(moditem.RUBY_BOW) && renderMode != ModelTransformationMode.GUI) {
+            return ((ItemRendererAccessor) this).mccourse$getModels().getModelManager().getModel(new ModelIdentifier(RubySteelMod.MOD_ID, "ruby_bow_3d", "inventory"));
+        }
         return value;
     }
 }
