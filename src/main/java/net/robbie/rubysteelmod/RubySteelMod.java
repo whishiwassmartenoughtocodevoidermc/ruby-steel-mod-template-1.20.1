@@ -24,12 +24,6 @@ public class RubySteelMod implements ModInitializer {
         modblock.registerModBlocks();
         ModWorldGeneration.generateModWorldGen();
 
-        // Register Ruby Bow Item
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_bow"), new RubyBowItem(new FabricItemSettings().fireproof()));
 
-        // Register Ruby Arrow Item
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID, "ruby_arrow"), new RubyArrowItem(new FabricItemSettings()));
-
-        // Optionally, perform any additional setup with your items here
     }
 }
