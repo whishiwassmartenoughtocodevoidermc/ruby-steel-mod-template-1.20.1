@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "rubysteelmod:ruby_helmet",
+    "rubysteelmod:ruby_chestplate",
+    "rubysteelmod:ruby_leggings",
+    "rubysteelmod:ruby_boots"
+  ]
+}
