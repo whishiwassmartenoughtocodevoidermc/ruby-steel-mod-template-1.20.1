@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "rubysteelmod:ruby_ore",
-    "rubysteelmod:ruby_block"
+    "rubysteelmod:ruby_block",
+    "rubysteelmod:deepslate_ruby_ore"
   ]
 }

@@ -4,7 +4,8 @@
     "rubysteelmod:ruby_block",
     "rubysteelmod:ruby_ore",
     "rubysteelmod:tungsten_ore",
-    "rubysteelmod:deepslate_tungsten_ore"
+    "rubysteelmod:deepslate_tungsten_ore",
+    "rubysteelmod:deepslate_ruby_ore"
 
   ]
 }
