@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "rubysteelmod:ruby"
+    },
+    "X": {
+      "item": "rubysteelmod:ruby_dust"
+    }
+  },
+  "pattern": [
+    " #X",
+    "# X",
+    " #X"
+  ],
+  "result": {
+    "item": "rubysteelmod:ruby_bow"
+  },
+  "show_notification": true
+}
