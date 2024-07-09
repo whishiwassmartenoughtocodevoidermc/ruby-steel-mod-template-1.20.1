@@ -67,7 +67,7 @@ public class RubyBowItem extends BowItem {
             float velocity = getArrowVelocity(useTicks);
 
             Vec3d lookVec = user.getRotationVec(1.0F);
-            arrowEntity.setVelocity(lookVec.x, lookVec.y, lookVec.z, velocity * 3.0F, 1.0F); // Adjust the arrow velocity and inaccuracy
+            arrowEntity.setVelocity(lookVec.x, lookVec.y, lookVec.z, velocity * 5.0F, 1.0F); // Adjust the arrow velocity and inaccuracy
 
             world.spawnEntity(arrowEntity);
 
