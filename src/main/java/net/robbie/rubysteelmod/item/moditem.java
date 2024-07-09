@@ -3,9 +3,12 @@ package net.robbie.rubysteelmod.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.robbie.rubysteelmod.RubySteelMod;
 import net.robbie.rubysteelmod.item.custom.RubyArrowItem;
@@ -34,7 +37,7 @@ public class moditem {
     public static final Item RUBY_CHESTPLATE = registeritem("ruby_chestplate", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
     public static final Item RUBY_LEGGINGS = registeritem("ruby_leggings", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
     public static final Item RUBY_BOOTS = registeritem("ruby_boots", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
-    public static final Item REDSTEEL_KATANA = registeritem("redsteel_katana",new FlamingSwordItem(modtoolmaterial.REDSTEEL,8,-1.2f,new FabricItemSettings().fireproof()));
+    public static final Item REDSTEEL_KATANA = registeritem("redsteel_katana",new FlamingkatanaItem(modtoolmaterial.REDSTEEL,8,-1.2f,new FabricItemSettings().fireproof()));
     public static final Item RUBY_ARROW = registeritem("ruby_arrow", new RubyArrowItem(new FabricItemSettings().fireproof()));
 
     private static void addItemstoingrediantstab(FabricItemGroupEntries entries) {
@@ -90,6 +93,28 @@ public class moditem {
             return super.postHit(stack, target, attacker);
         }
     }
+    public static class FlamingkatanaItem extends SwordItem {
+    public FlamingkatanaItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
+        super(material, attackDamage, attackSpeed, settings);
+    }
+
+    @Override
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        target.setOnFireFor(1200); // Sets the target on fire for 1200 ticks (60 seconds)
+        return super.postHit(stack, target, attacker);
+    }
+
+    @Override
+    public ActionResult useOnBlock(ItemUsageContext context) {
+        PlayerEntity player = context.getPlayer();
+        if (player != null) {
+            // Trigger the animation
+            player.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.0F, 1.0F);
+        }
+        return ActionResult.SUCCESS;
+    }
+}
+
        public static class FlamingPickaxeItem extends PickaxeItem {
     public FlamingPickaxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);

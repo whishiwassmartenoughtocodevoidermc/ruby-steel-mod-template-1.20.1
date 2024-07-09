@@ -75,5 +75,12 @@
 			"color": 0,
 			"children": [0, 1, 2]
 		}
+	],
+	"overrides": [
+		{
+			"predicate": {"custom_model_data": 1},
+			"model": "rubysteelmod:item/redsteel_katana_3d",
+			"animation": "rubysteelmod:animation/redsteel_katana_3d.swing.json"
+		}
 	]
 }

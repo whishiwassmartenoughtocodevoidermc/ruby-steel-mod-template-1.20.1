@@ -33,6 +33,10 @@ public abstract class ItemRendererMixin {
         if (stack.isOf(moditem.RUBY_BOW) && renderMode != ModelTransformationMode.GUI) {
             return ((ItemRendererAccessor) this).mccourse$getModels().getModelManager().getModel(new ModelIdentifier(RubySteelMod.MOD_ID, "ruby_bow_3d", "inventory"));
         }
+        if (stack.isOf(moditem.RUBY_PICKAXE) && renderMode != ModelTransformationMode.GUI) {
+            return ((ItemRendererAccessor) this).mccourse$getModels().getModelManager().getModel(new ModelIdentifier(RubySteelMod.MOD_ID, "ruby_pickaxe_3d", "inventory"));
+        }
+
         return value;
     }
 }

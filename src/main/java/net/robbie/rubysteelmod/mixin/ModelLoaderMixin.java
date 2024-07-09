@@ -28,5 +28,6 @@ public abstract class ModelLoaderMixin {
         this.addModel(new ModelIdentifier(RubySteelMod.MOD_ID, "redsteel_katana_3d", "inventory"));
         this.addModel(new ModelIdentifier(RubySteelMod.MOD_ID, "ruby_bow_3d", "inventory"));
         this.addModel(new ModelIdentifier(RubySteelMod.MOD_ID, "ruby_arrow_3d", "inventory"));
+        this.addModel(new ModelIdentifier(RubySteelMod.MOD_ID, "ruby_pickaxe_3d", "inventory"));
     }
 }
