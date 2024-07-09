@@ -28,7 +28,7 @@ public class moditem {
     public static final Item RUBY_DUST = registeritem("ruby_dust",new Item(new FabricItemSettings()));
     public static final Item RUBY_SWORD = registeritem("ruby_sword",new FlamingSwordItem(modtoolmaterial.RUBY,4,-2.4f,new FabricItemSettings().fireproof()));
     public static final Item RUBY_BOW = registeritem("ruby_bow",new RubyBowItem(new FabricItemSettings().fireproof()));
-    public static final Item RUBY_PICKAXE = registeritem("ruby_pickaxe",new FlamingPickaxeItem((modtoolmaterial.RUBY),1,0.6f,new FabricItemSettings().fireproof()));
+    public static final Item RUBY_PICKAXE = registeritem("ruby_pickaxe",new PickaxeItem((modtoolmaterial.RUBY),1,0.6f,new FabricItemSettings().fireproof()));
     public static final Item RUBY_AXE = registeritem("ruby_axe", new FlamingAxeItem((modtoolmaterial.RUBY), 6, -3.0f, new FabricItemSettings().fireproof()));
     public static final Item RUBY_HELMET = registeritem("ruby_helmet", new modarmoritem(modarmormaterial.RUBY, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
     public static final Item RUBY_CHESTPLATE = registeritem("ruby_chestplate", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
@@ -91,17 +91,6 @@ public class moditem {
         }
     }
 
-    public static class FlamingPickaxeItem extends PickaxeItem {
-        public FlamingPickaxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
-            super(material, attackDamage, attackSpeed, settings);
-        }
-
-        @Override
-        public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-            target.setOnFireFor(1200); // Sets the target on fire for 1200 ticks (60 seconds)
-            return super.postHit(stack, target, attacker);
-        }
-    }
 
     public static class FlamingAxeItem extends AxeItem {
         public FlamingAxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
