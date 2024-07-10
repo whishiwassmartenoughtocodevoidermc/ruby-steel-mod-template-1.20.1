@@ -1,5 +1,6 @@
 package net.robbie.rubysteelmod.item;
 
+import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -93,7 +94,7 @@ public class moditem {
             return super.postHit(stack, target, attacker);
         }
     }
-    public static class FlamingkatanaItem extends SwordItem {
+public static class FlamingkatanaItem extends SwordItem {
     public FlamingkatanaItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
     }
@@ -104,16 +105,17 @@ public class moditem {
         return super.postHit(stack, target, attacker);
     }
 
-    @Override
-    public ActionResult useOnBlock(ItemUsageContext context) {
-        PlayerEntity player = context.getPlayer();
-        if (player != null) {
-            // Trigger the animation
-            player.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.0F, 1.0F);
-        }
-        return ActionResult.SUCCESS;
+    public void registerEvents() {
+        AttackEntityCallback.EVENT.register((player, world, hand, entity, hitResult) -> {
+            if (player.getMainHandStack().getItem() instanceof FlamingSwordItem) {
+                // Trigger the animation
+                player.playSound(SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 1.0F, 1.0F);
+            }
+            return ActionResult.PASS;
+        });
     }
 }
+
 
        public static class FlamingPickaxeItem extends PickaxeItem {
     public FlamingPickaxeItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
