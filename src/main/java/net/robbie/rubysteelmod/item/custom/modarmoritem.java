@@ -19,8 +19,6 @@ public class modarmoritem extends ArmorItem {
     private static final Map<ArmorMaterial, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, List<StatusEffectInstance>>())
                     .put(modarmormaterial.RUBY, Arrays.asList(
-                            new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 900000000, 1,
-                                    false, false, true),
                             new StatusEffectInstance(StatusEffects.SPEED, 900000000, 1,
                                     false, false, true)
                     )).build();
