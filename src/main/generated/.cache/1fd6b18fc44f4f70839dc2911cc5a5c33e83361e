@@ -1,4 +1,4 @@
-// 1.20.1	2024-12-28T13:10:23.6797781	Ruby Steel Mod/Model Definitions
+// 1.20.1	2024-12-28T13:31:42.0263856	Ruby Steel Mod/Model Definitions
 5b914f0ce42a25757586a5274753de5a170362a7 assets\rubysteelmod\models\item\ruby_helmet_quartz_trim.json
 2a67ae1bdcc168a433bfea5e310cdb7a174b0ce4 assets\rubysteelmod\models\item\ruby_boots_iron_trim.json
 a4f2543ef5a9646d730f06cd68f26b7c66ea2780 assets\rubysteelmod\models\item\steel_leggings_quartz_trim.json
@@ -13,8 +13,8 @@ e9ec1a9856d1951464067be9149c9e7aa1e2ec69 assets\rubysteelmod\models\item\ruby_le
 664a4e791c851459cfd754a7a90c4bce035c80b0 assets\rubysteelmod\models\item\ruby_boots_amethyst_trim.json
 536ea36845d50ae238beb5a1e48858ac7a95d4fa assets\rubysteelmod\models\item\ruby_leggings_copper_trim.json
 cdd31ab3fda6b73114312eb2bd698c0bc55d884e assets\rubysteelmod\models\item\ruby_leggings_diamond_trim.json
-e74f219f1a7cd1379e70e5816bb5c367b14b76a9 assets\rubysteelmod\models\item\steel_chestplate.json
 c0453f4a0ea9c990afd7df79ce49f6f4695bafd5 assets\rubysteelmod\models\item\ruby_leggings.json
+e74f219f1a7cd1379e70e5816bb5c367b14b76a9 assets\rubysteelmod\models\item\steel_chestplate.json
 b94fbffe78ee817669697f5668bbcfe76671e2dc assets\rubysteelmod\models\item\steel_leggings_iron_trim.json
 3bb988acd68ccb7898852b5a1579bd88283f4eae assets\rubysteelmod\models\item\steel_leggings_netherite_trim.json
 2d597d57344e3bd54dea4f22ea6d9e8d3678b844 assets\rubysteelmod\models\item\ruby_leggings_netherite_trim.json
