@@ -3,7 +3,7 @@
   "item.rubysteelmod.raw_ruby": "Raw Ruby",
   "item.rubysteelmod.tungsten": "Tungsten Ingot",
   "item.rubysteelmod.raw_tungsten": "Raw Tungsten",
-  "item.rubysteelmod.steel": "Steel Ingot",
+  "item.rubysteelmod.steel_ingot": "Steel Ingot",
   "item.rubysteelmod.redsteel": "Red Steel Ingot",
   "item.rubysteelmod.ruby_dust": "Ruby Dust",
   "item.rubysteelmod.ruby_sword": "Ruby Sword",
@@ -21,6 +21,10 @@
   "block.rubysteelmod.deepslate_tungsten_ore": "Deepslate Tungsten Ore",
   "item.rubysteelmod.ruby_bow": "Ruby Bow",
   "item.rubysteelmod.ruby_arrow": "Ruby Arrow",
+   "item.rubysteelmod.steel_helmet": "Steel Helmet",
+  "item.rubysteelmod.steel_chestplate": "Steel Chestplate",
+  "item.rubysteelmod.steel_leggings": "Steel Leggings",
+  "item.rubysteelmod.steel_boots": "Steel Boots",
   "itemgroup.ruby": "Ruby Mod Items"
 
 

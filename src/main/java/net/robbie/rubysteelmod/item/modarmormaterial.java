@@ -10,8 +10,10 @@ import net.minecraft.sound.SoundEvents;
 import java.util.function.Supplier;
 
 public enum modarmormaterial implements ArmorMaterial {
-    RUBY("ruby", 74, new int[] { 6, 16, 12, 6 }, 30,
-            SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 4f, 0.1f, () -> Ingredient.ofItems(moditem.RUBY));
+    RUBY("ruby", 74, new int[] { 3, 7, 5, 3 }, 30,
+            SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 4f, 0.1f, () -> Ingredient.ofItems(moditem.RUBY)),
+    STEEL_INGOT("steel_ingot", 74, new int[] { 2, 5, 4, 2 }, 30,
+            SoundEvents.ITEM_ARMOR_EQUIP_IRON, 4f, 0.1f, () -> Ingredient.ofItems(moditem.STEEL_INGOT));
 
     private final String name;
     private final int durabilityMultiplier;

@@ -4,6 +4,10 @@
     "rubysteelmod:ruby_helmet",
     "rubysteelmod:ruby_chestplate",
     "rubysteelmod:ruby_leggings",
-    "rubysteelmod:ruby_boots"
+    "rubysteelmod:ruby_boots",
+    "rubysteelmod:steel_helmet",
+    "rubysteelmod:steel_chestplate",
+    "rubysteelmod:steel_leggings",
+    "rubysteelmod:steel_boots"
   ]
 }

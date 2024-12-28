@@ -27,10 +27,10 @@ public class moditem {
     public static final Item RAW_RUBY = registeritem("raw_ruby",new Item(new FabricItemSettings()));
     public static final Item RUBY = registeritem("ruby",new Item(new FabricItemSettings()));
     public static final Item TUNGSTEN = registeritem("tungsten",new Item(new FabricItemSettings()));
-    public static final Item STEEL = registeritem("steel",new Item(new FabricItemSettings()));
+    public static final Item STEEL_INGOT = registeritem("steel_ingot",new Item(new FabricItemSettings()));
     public static final Item RAW_TUNGSTEN = registeritem("raw_tungsten",new Item(new FabricItemSettings()));
     public static final Item RUBY_DUST = registeritem("ruby_dust",new Item(new FabricItemSettings()));
-    public static final Item RUBY_SWORD = registeritem("ruby_sword",new FlamingSwordItem(modtoolmaterial.RUBY,4,-2.4f,new FabricItemSettings().fireproof()));
+    public static final Item RUBY_SWORD = registeritem("ruby_sword",new FlamingSwordItem(modtoolmaterial.RUBY,-1,-2.4f,new FabricItemSettings().fireproof()));
     public static final Item RUBY_BOW = registeritem("ruby_bow",new RubyBowItem(new FabricItemSettings().fireproof()));
     public static final Item RUBY_PICKAXE = registeritem("ruby_pickaxe",new FlamingPickaxeItem((modtoolmaterial.RUBY),1,0.6f,new FabricItemSettings().fireproof()));
     public static final Item RUBY_AXE = registeritem("ruby_axe", new FlamingAxeItem((modtoolmaterial.RUBY), 3, -3.0f, new FabricItemSettings().fireproof()));
@@ -38,16 +38,20 @@ public class moditem {
     public static final Item RUBY_CHESTPLATE = registeritem("ruby_chestplate", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
     public static final Item RUBY_LEGGINGS = registeritem("ruby_leggings", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
     public static final Item RUBY_BOOTS = registeritem("ruby_boots", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
-    public static final Item REDSTEEL_KATANA = registeritem("redsteel_katana",new FlamingkatanaItem(modtoolmaterial.REDSTEEL,0,-1.4f,new FabricItemSettings().fireproof()));
+    public static final Item REDSTEEL_KATANA = registeritem("redsteel_katana",new FlamingkatanaItem(modtoolmaterial.REDSTEEL,-1,-1.4f,new FabricItemSettings().fireproof()));
     public static final Item RUBY_ARROW = registeritem("ruby_arrow", new RubyArrowItem(new FabricItemSettings().fireproof()));
+    public static final Item STEEL_HELMET = registeritem("steel_helmet", new modarmoritem(modarmormaterial.RUBY, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
+    public static final Item STEEL_CHESTPLATE = registeritem("steel_chestplate", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
+    public static final Item STEEL_LEGGINGS = registeritem("steel_leggings", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
+    public static final Item STEEL_BOOTS = registeritem("steel_boots", new ArmorItem(modarmormaterial.STEEL_INGOT, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
 
     private static void addItemstoingrediantstab(FabricItemGroupEntries entries) {
         entries.add(RUBY);
         entries.add(TUNGSTEN);
-        entries.add(STEEL);
         entries.add(REDSTEEL);
         entries.add(RAW_RUBY);
         entries.add(RAW_TUNGSTEN);
+        entries.add(STEEL_INGOT);
         entries.add(RUBY_DUST);
     }
 
@@ -61,6 +65,10 @@ public class moditem {
         entries.add(REDSTEEL_KATANA);
         entries.add(RUBY_ARROW);
         entries.add(RUBY_BOW);
+        entries.add(STEEL_HELMET);
+        entries.add(STEEL_CHESTPLATE);
+        entries.add(STEEL_LEGGINGS);
+        entries.add(STEEL_BOOTS);
     }
 
     private static void addItemstotoolstab(FabricItemGroupEntries entries) {
