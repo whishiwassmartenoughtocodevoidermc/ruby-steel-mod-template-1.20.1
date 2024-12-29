@@ -29,6 +29,11 @@ public class moditemgroups {
                         entries.add(modblock.DEEPSLATE_TUNGSTEN_ORE);
                         entries.add(moditem.RUBY_ARROW);
                         entries.add(moditem.RUBY_BOW);
+                        entries.add(moditem.STEEL_BOOTS);
+                        entries.add(moditem.STEEL_LEGGINGS);
+                        entries.add(moditem.STEEL_CHESTPLATE);
+                        entries.add(moditem.STEEL_HELMET);
+
 
 
 

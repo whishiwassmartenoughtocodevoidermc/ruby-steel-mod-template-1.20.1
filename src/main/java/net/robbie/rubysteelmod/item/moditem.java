@@ -40,9 +40,9 @@ public class moditem {
     public static final Item RUBY_BOOTS = registeritem("ruby_boots", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
     public static final Item REDSTEEL_KATANA = registeritem("redsteel_katana",new FlamingkatanaItem(modtoolmaterial.REDSTEEL,-1,-1.4f,new FabricItemSettings().fireproof()));
     public static final Item RUBY_ARROW = registeritem("ruby_arrow", new RubyArrowItem(new FabricItemSettings().fireproof()));
-    public static final Item STEEL_HELMET = registeritem("steel_helmet", new modarmoritem(modarmormaterial.RUBY, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
-    public static final Item STEEL_CHESTPLATE = registeritem("steel_chestplate", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
-    public static final Item STEEL_LEGGINGS = registeritem("steel_leggings", new ArmorItem(modarmormaterial.RUBY, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
+    public static final Item STEEL_HELMET = registeritem("steel_helmet", new modarmoritem(modarmormaterial.STEEL_INGOT, ArmorItem.Type.HELMET, new FabricItemSettings().fireproof()));
+    public static final Item STEEL_CHESTPLATE = registeritem("steel_chestplate", new ArmorItem(modarmormaterial.STEEL_INGOT, ArmorItem.Type.CHESTPLATE, new FabricItemSettings().fireproof()));
+    public static final Item STEEL_LEGGINGS = registeritem("steel_leggings", new ArmorItem(modarmormaterial.STEEL_INGOT, ArmorItem.Type.LEGGINGS, new FabricItemSettings().fireproof()));
     public static final Item STEEL_BOOTS = registeritem("steel_boots", new ArmorItem(modarmormaterial.STEEL_INGOT, ArmorItem.Type.BOOTS, new FabricItemSettings().fireproof()));
 
     private static void addItemstoingrediantstab(FabricItemGroupEntries entries) {
