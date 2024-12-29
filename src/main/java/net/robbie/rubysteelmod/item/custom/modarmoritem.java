@@ -16,12 +16,17 @@ import java.util.List;
 import java.util.Map;
 
 public class modarmoritem extends ArmorItem {
-    private static final Map<ArmorMaterial, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
-            (new ImmutableMap.Builder<ArmorMaterial, List<StatusEffectInstance>>())
-                    .put(modarmormaterial.RUBY, Arrays.asList(
-                            new StatusEffectInstance(StatusEffects.SPEED, 900000000, 1,
-                                    false, false, true)
-                    )).build();
+   private static final Map<ArmorMaterial, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
+        (new ImmutableMap.Builder<ArmorMaterial, List<StatusEffectInstance>>())
+                .put(modarmormaterial.RUBY, Arrays.asList(
+                        new StatusEffectInstance(StatusEffects.SPEED, 900000000, 1,
+                                false, false, true)
+                ))
+                .put(modarmormaterial.STEEL_INGOT, Arrays.asList(
+                        new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 900000000, 0,
+                                false, false, true)
+                ))
+                .build();
 
     public modarmoritem(ArmorMaterial material, Type type, Settings settings) {
         super(material, type, settings);
