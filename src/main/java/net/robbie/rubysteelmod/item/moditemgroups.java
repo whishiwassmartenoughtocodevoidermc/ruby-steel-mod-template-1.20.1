@@ -33,6 +33,10 @@ public class moditemgroups {
                         entries.add(moditem.STEEL_LEGGINGS);
                         entries.add(moditem.STEEL_CHESTPLATE);
                         entries.add(moditem.STEEL_HELMET);
+                        entries.add(moditem.STEEL_INGOT);
+                        entries.add(moditem.TUNGSTEN);
+                        entries.add(moditem.RAW_TUNGSTEN);
+
 
 
 
