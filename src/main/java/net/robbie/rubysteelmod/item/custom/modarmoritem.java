@@ -19,15 +19,22 @@ public class modarmoritem extends ArmorItem {
    private static final Map<ArmorMaterial, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
         (new ImmutableMap.Builder<ArmorMaterial, List<StatusEffectInstance>>())
                 .put(modarmormaterial.RUBY, Arrays.asList(
-                        new StatusEffectInstance(StatusEffects.SPEED, 900000000, 1,
+                        new StatusEffectInstance(StatusEffects.SPEED, 5, 1,
                                 false, false, true)
                 ))
                 .put(modarmormaterial.STEEL_INGOT, Arrays.asList(
-                        new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 900000000, 0,
+                        new StatusEffectInstance(StatusEffects.FIRE_RESISTANCE, 5, 0,
                                 false, false, true)
                 ))
                 .build();
 
+ private static final Map<ArmorMaterial, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAPP =
+        (new ImmutableMap.Builder<ArmorMaterial, List<StatusEffectInstance>>())
+                .put(modarmormaterial.RUBY, Arrays.asList(
+                        new StatusEffectInstance(StatusEffects.WITHER, 5, 3,
+                                false, false, true)
+                ))
+                .build();
     public modarmoritem(ArmorMaterial material, Type type, Settings settings) {
         super(material, type, settings);
     }
@@ -37,6 +44,11 @@ public class modarmoritem extends ArmorItem {
         if(!world.isClient()) {
             if(entity instanceof PlayerEntity player && hasFullSuitOfArmorOn(player)) {
                 evaluateArmorEffects(player);
+                if (!player.hasStatusEffect(StatusEffects.WITHER)){
+                    if (player.isOnFire()){
+                        evaluateArmorEffectsForInLava(player);
+                    }
+                }
             }
         }
 
@@ -58,11 +70,32 @@ public class modarmoritem extends ArmorItem {
         }
     }
 
+    private void evaluateArmorEffectsForInLava(PlayerEntity player) {
+        for (Map.Entry<ArmorMaterial, List<StatusEffectInstance>> entry : MATERIAL_TO_EFFECT_MAPP.entrySet()) {
+            ArmorMaterial mapArmorMaterial = entry.getKey();
+            List<StatusEffectInstance> mapStatusEffects = entry.getValue();
+
+            if(hasCorrectArmorOn(mapArmorMaterial, player)) {
+                for (StatusEffectInstance mapStatusEffect : mapStatusEffects) {
+                    addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffect);
+                }
+            }
+        }
+    }
+
     private void addStatusEffectForMaterial(PlayerEntity player, ArmorMaterial mapArmorMaterial, StatusEffectInstance mapStatusEffect) {
         boolean hasPlayerEffect = player.hasStatusEffect(mapStatusEffect.getEffectType());
 
         if(hasCorrectArmorOn(mapArmorMaterial, player) && !hasPlayerEffect) {
             player.addStatusEffect(new StatusEffectInstance(mapStatusEffect));
+        }
+    }
+     private void RemoveStatusEffectForMaterial(PlayerEntity player, ArmorMaterial mapArmorMaterial, StatusEffectInstance mapStatusEffect) {
+        boolean hasPlayerEffect = player.hasStatusEffect(mapStatusEffect.getEffectType());
+
+        if(!hasCorrectArmorOn(mapArmorMaterial, player) && hasPlayerEffect) {
+            player.removeStatusEffect(mapStatusEffect.getEffectType());
+
         }
     }
 
