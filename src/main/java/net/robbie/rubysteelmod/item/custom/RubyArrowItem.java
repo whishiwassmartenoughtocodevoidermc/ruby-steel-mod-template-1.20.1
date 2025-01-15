@@ -15,7 +15,7 @@ public class RubyArrowItem extends ArrowItem {
     @Override
     public PersistentProjectileEntity createArrow(World world, ItemStack stack, LivingEntity shooter) {
         ArrowEntity arrowEntity = new ArrowEntity(world, shooter);
-        arrowEntity.setDamage(12.0); // Example damage, adjust as necessary
+        arrowEntity.setDamage(7.0); // Example damage, adjust as necessary
         arrowEntity.setOnFireFor(1200); // Sets the arrow on fire for 5 seconds (100 ticks)
         return arrowEntity;
     }
